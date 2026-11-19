@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>3D Builder</AssemblyName>
+    <RootNamespace>ThreeDBuilder</RootNamespace>
+    <PlatformTarget>x64</PlatformTarget>
+    <PublishSingleFile Condition="'$(PublishSingleFile)'==''">false</PublishSingleFile>
+    <PublishReadyToRun Condition="'$(PublishReadyToRun)'==''">false</PublishReadyToRun>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <InformationalVersion>1.0.0</InformationalVersion>
+  </PropertyGroup>
+
+  <!-- Build & publish notes:
+       Build (debug):   dotnet build ... -c Debug
+       Build (release): dotnet build ... -c Release
+       Publish .exe:    dotnet publish ... -c Release -r win-x64 -p:SelfContained=false
+       Single-file exe: add /p:PublishSingleFile=true
+  -->
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
